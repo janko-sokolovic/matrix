@@ -1,0 +1,10 @@
+.symbol {
+  font-size: 25px;
+  color:#009a22;
+  text-shadow: 0px 0px 1px #36ba01;
+}
+
+.symbol.primary {
+  color:#00ff2b;
+  text-shadow: 0px 0px 10px white;
+}
