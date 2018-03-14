@@ -56,7 +56,8 @@ export default class Code extends Component {
 
 	render() {
 		const code = _.times(this.state.codeLength).map((x, i) => (
-			<Symbol key={i} opacity={i <= 4 ? i / 4 : 1} />
+			// Set opacity to small for last 5
+			<Symbol key={i} opacity={i <= 5 ? i / 5 : 1} />
 		));
 		const { xPosition, yPosition, transition, transform } = this.state;
 		const styles = {
