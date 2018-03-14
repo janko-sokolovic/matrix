@@ -5,6 +5,7 @@ import _ from 'lodash';
 import './Code.css';
 
 const SYMBOL_HEIGHT = 26; // Empirically :) Depends on Symbol font-size!!
+const SYMBOL_WIDTH = 18;
 const MAX_CODE_LENGTH = 40;
 const MIN_CODE_LENGTH = 10;
 /**
@@ -23,13 +24,22 @@ export default class Code extends Component {
 	}
 
 	componentWillMount() {
-		const scaleRatio = _.random(1.0, 1.5);
-		const codeLength = _.random(MIN_CODE_LENGTH, MAX_CODE_LENGTH);
+		// Some lines are zoomed-in, some zoomed-out
+		const scaleRatio = _.random(0.8, 1.4);
+
+		//Min code height is height of screen - no good reason but - why not
+		const minCodeHeight = _.round(window.innerHeight / SYMBOL_HEIGHT);
+		const codeLength = _.random(minCodeHeight, minCodeHeight * 2);
 
 		//Hacky solution to get the line above top=0
 		const yPosition = (codeLength + 1) * SYMBOL_HEIGHT * scaleRatio;
-		const xPosition = _.random(5, window.innerWidth - 20); // avoid edges
-		const transition = ` top linear ${_.random(3, 10.5)}s`; //different speed
+
+		// we don't want to have partially overlaping lines - make columns
+		const stepCount = _.round((window.innerWidth - 20) / SYMBOL_WIDTH);
+		const xPosition = _.random(0, stepCount) * SYMBOL_WIDTH;
+
+		// we divide by scale ratio because if it is small it is probably far => thus slower :)
+		const transition = ` top linear ${_.random(5, 10) / scaleRatio}s`; //different speed
 		const transform = `scale(${scaleRatio})`;
 
 		this.setState({ codeLength, yPosition, xPosition, transition, transform });
@@ -46,7 +56,7 @@ export default class Code extends Component {
 
 	render() {
 		const code = _.times(this.state.codeLength).map((x, i) => (
-			<Symbol key={i} />
+			<Symbol key={i} opacity={i <= 4 ? i / 4 : 1} />
 		));
 		const { xPosition, yPosition, transition, transform } = this.state;
 		const styles = {

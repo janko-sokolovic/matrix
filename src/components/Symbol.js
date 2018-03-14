@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './Symbol.css';
 import chars from '../chars/chars';
-// import _ from 'lodash';
 
 export default class Symbol extends Component {
 	constructor(props) {
@@ -9,7 +8,7 @@ export default class Symbol extends Component {
 		this.state = { char: this.getRandomChar() };
 	}
 	componentWillMount() {
-		if (Math.random() >= 0.9) {
+		if (Math.random() >= 0.9 || this.props.primary) {
 			setInterval(() => {
 				this.setState({ char: this.getRandomChar() });
 			}, 200);
@@ -23,6 +22,13 @@ export default class Symbol extends Component {
 	render() {
 		const randomChar = chars[Math.floor(Math.random() * chars.length)];
 		const clazz = this.props.primary ? 'primary symbol' : 'symbol';
-		return <div className={clazz}> {randomChar} </div>;
+		const styles = {
+			opacity: this.props.opacity
+		};
+		return (
+			<div className={clazz} style={styles}>
+				{randomChar}
+			</div>
+		);
 	}
 }
