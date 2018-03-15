@@ -59,12 +59,12 @@ export default class Code extends Component {
 			// Set opacity to small for last 5
 			<Symbol key={i} opacity={i <= 5 ? i / 5 : 1} />
 		));
-		const { xPosition, yPosition, transition, transform } = this.state;
+		const { yPosition, xPosition, transition, transform } = this.state;
 		const styles = {
-			left: this.state.xPosition,
-			top: -this.state.yPosition,
-			transition: this.state.transition,
-			transform: this.state.transform
+			left: xPosition,
+			top: -yPosition,
+			transition,
+			transform
 		};
 
 		return (
