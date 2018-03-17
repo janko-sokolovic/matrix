@@ -3,7 +3,7 @@ import Code from "./Code";
 import "./Matrix.css";
 import _ from "lodash";
 
-const CODE_LINES_COUNT = 100;
+const CODE_LINES_COUNT = 1;
 
 export default class Matrix extends Component {
   render() {

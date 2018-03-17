@@ -1,19 +1,18 @@
 import React, { Component } from "react";
 import Symbol from "./Symbol";
 import _ from "lodash";
-
 import "./Code.css";
 
 const SYMBOL_HEIGHT = 26; // Empirically :) Depends on Symbol font-size!!
 const SYMBOL_WIDTH = 18;
-const MAX_CODE_LENGTH = 40;
-const MIN_CODE_LENGTH = 10;
+
 /**
  * Code is a stream of symbols
  */
 export default class Code extends Component {
   constructor(props, state) {
     super(props);
+
     this.state = {
       codeLength: 0,
       yPosition: 0,
