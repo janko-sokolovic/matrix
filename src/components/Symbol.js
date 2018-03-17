@@ -9,7 +9,7 @@ export default class Symbol extends Component {
   }
 
   componentWillMount() {
-    if (this.props.primary) {
+    if (this.props.primary || Math.random() > 0.95) {
       this.makeSymbolDynamic();
     }
   }
@@ -21,18 +21,17 @@ export default class Symbol extends Component {
   makeSymbolDynamic() {
     setInterval(() => {
       this.setState({ char: this.getRandomChar() });
-    }, 500);
+    }, 550);
   }
 
   render() {
-    const randomChar = this.getRandomChar();
-    const clazz = this.props.primary ? "primary symbol" : "symbol";
-    const styles = {
-      opacity: this.props.opacity
-    };
+    const { primary, opacity } = this.props;
     return (
-      <div className={clazz} style={styles}>
-        {randomChar}
+      <div
+        className={"symbol " + (primary ? "primary" : "")}
+        style={{ opacity }}
+      >
+        {this.getRandomChar()}
       </div>
     );
   }
