@@ -1,10 +1,4 @@
-@font-face {
-    font-family: Matrix;
-    src: url("/assets/matrix-code.eot?#iefix") format("embedded-opentype"), url("/assets/matrix-code.woff") format("woff"), url("/assets/matrix-code.ttf") format("truetype"), url("/assets/matrix-code.svg#svgFontName") format("svg");
-}
-
 .Matrix {
-  font-family: Matrix;
   background-color: #010101;
   width:100%;
   height:100%;

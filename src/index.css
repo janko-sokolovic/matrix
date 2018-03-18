@@ -1,5 +1,18 @@
+
+@font-face {
+    font-family: Matrix;
+    src: url("./fonts/matrix-code.eot?#iefix") format("embedded-opentype"),
+    url("./fonts/matrix-code.woff") format("woff"),
+    url("./fonts/matrix-code.ttf") format("truetype"),
+    url("./fonts/matrix-code.svg#svgFontName") format("svg");
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+}
+
+* {
+  font-family: Matrix !important;
 }
