@@ -31,7 +31,7 @@ export default class Symbol extends Component {
         className={"symbol " + (primary ? "primary" : "")}
         style={{ opacity }}
       >
-        {this.getRandomChar()}
+        {this.state.char}
       </div>
     );
   }
