@@ -3,7 +3,7 @@ import Symbol from "./Symbol";
 import _ from "lodash";
 import "./Code.css";
 
-const SYMBOL_HEIGHT = 26; // Empirically :) Depends on Symbol font-size!!
+const SYMBOL_HEIGHT = 28; // Empirically :) Depends on Symbol font-size!!
 const SYMBOL_WIDTH = 18;
 
 /**
