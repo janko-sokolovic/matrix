@@ -22,7 +22,7 @@ const FadeText = (function() {
   }
 
   function fade() {
-    const spans = document.querySelectorAll('span[class^=anim');
+    const spans = document.querySelectorAll('span[class^=anim]');
 
     const helperArr = shuffle([...Array(spans.length).keys()]);
 
