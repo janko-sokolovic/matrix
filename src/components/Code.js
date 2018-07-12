@@ -31,7 +31,7 @@ export default class Code extends Component {
     const codeLength = _.random(minCodeHeight, minCodeHeight * 2);
 
     //Hacky solution to get the line above top=0 at start
-    const yPosition = (codeLength + 1) * SYMBOL_HEIGHT * scaleRatio;
+    const yPosition = (codeLength + 1) * SYMBOL_HEIGHT * scaleRatio * 1.5;
 
     // we don't want to have partially overlaping lines - make columns
     const stepCount = _.round((window.innerWidth - 20) / SYMBOL_WIDTH);
