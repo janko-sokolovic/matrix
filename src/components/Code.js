@@ -1,24 +1,24 @@
-import React, { Component } from "react";
-import Symbol from "./Symbol";
-import _ from "lodash";
-import "./Code.css";
+import React, { Component } from 'react';
+import Symbol from './Symbol';
+import _ from 'lodash';
+import './Code.css';
 
-const SYMBOL_HEIGHT = 30; // Empirically :) Depends on Symbol font-size!!
+const SYMBOL_HEIGHT = 35; // Empirically :) Depends on Symbol font-size!!
 const SYMBOL_WIDTH = 18;
 
 /**
  * Code is a stream of symbols
  */
 export default class Code extends Component {
-  constructor(props, state) {
+  constructor(props) {
     super(props);
 
     this.state = {
       codeLength: 0,
       yPosition: 0,
       xPosition: 0,
-      transition: "",
-      transform: ""
+      transition: '',
+      transform: ''
     };
   }
 
@@ -55,7 +55,7 @@ export default class Code extends Component {
 
   render() {
     const code = _.times(this.state.codeLength).map((x, i) => (
-      // Set opacity to small for last 5
+      // Set small opacity for last 5 symbols (fade effect)
       <Symbol key={i} opacity={i <= 5 ? i / 5 : 1} />
     ));
     const { yPosition, xPosition, transition, transform } = this.state;
