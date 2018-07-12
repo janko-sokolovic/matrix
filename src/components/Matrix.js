@@ -3,10 +3,11 @@ import Code from './Code';
 import './Matrix.css';
 import _ from 'lodash';
 import FadeText from './AnimateText';
+import messages from '../data/messages.json';
 
 const Message = () => (
   <div id="MESSAGE" className="Message">
-    Matrix has you
+    {messages[Math.floor(Math.random() * messages.length)]}
   </div>
 );
 
