@@ -6,8 +6,10 @@ import FadeText from './AnimateText';
 import messages from '../data/messages.json';
 
 const Message = () => (
-  <div id="MESSAGE" className="Message">
-    {messages[Math.floor(Math.random() * messages.length)]}
+  <div className="MessageWrapper">
+    <div id="MESSAGE" className="Message">
+      {messages[Math.floor(Math.random() * messages.length)]}
+    </div>
   </div>
 );
 

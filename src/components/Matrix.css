@@ -9,6 +9,13 @@
   bottom: 0;
 }
 
+.MessageWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
 .Message {
   color: white;
   font-family: 'Courier New', Courier, monospace !important;
@@ -16,7 +23,10 @@
   justify-content: center;
   display: flex;
   align-items: center;
-  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  flex-wrap: wrap;
 }
 
 .Message span {
