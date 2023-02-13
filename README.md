@@ -2,7 +2,7 @@
 
 ## Demo
 
-See the live demo [here](https://jasofalcon.github.io/matrix/)
+See the live demo [here](https://janko-sokolovic.github.io/matrix/)
 
 ## Install
 
