@@ -4,7 +4,7 @@ A Matrix-style digital rain animation built with React 18 + Canvas + Vite.
 
 ## Demo
 
-[Live demo](https://janko-sokolovic.github.io/matrix-settings/)
+[Live demo](https://janko-sokolovic.github.io/matrix/)
 
 ## Features
 
